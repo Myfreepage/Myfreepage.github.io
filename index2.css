@@ -1,0 +1,95 @@
+body {
+    width: 870px;
+    background-color: rgb(157, 230, 254);
+    margin-left: 30px;
+  }
+
+  p {
+    line-height: 200%;
+    vertical-align: top;
+  }
+
+  h1 {
+    padding: 10px 5px 10px 5px;
+    color: white;
+    position: absolute;
+  }
+
+  h2{
+    font-size: 30px;
+    color: brown;
+    background-color: wheat;
+    padding: 15px;
+}
+
+  h3 {
+    margin: 15px 0px 15px 0px;
+    padding: 5px 0px 5px 10px;
+    background-color: white;
+    color: dimgray;
+    border: solid 10px dimgray;
+    border-radius: 4px;
+  }
+
+  a {
+    color: steelblue;
+  }
+
+  a:hover {
+    color: tomato;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  figCaption {
+    font-size: 10px;
+  }
+
+  .header {
+    padding: 5px 0px;
+    border-bottom: 1px solid silver;
+  }
+
+  .mainheader {
+    position: relative;
+    background-color: green;
+    width: 870px;
+    height: 200px;
+  }
+
+  .footer {
+    border-top: 1px solid silver;
+    clear: both;
+    padding: 5px 0px;
+  }
+
+  .mainmenu {
+    padding: 5px 0px 5px 5px;
+  }
+
+  content{
+    background-color: whitesmoke;
+    padding: 15px;
+    border: double 1px rgb(99, 94, 94);
+}
+
+  .column {
+    width: 870px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    clear: both;
+  }
+
+  .imgLeft {
+    float: left;
+    padding-right: 10px;
+    padding-bottom: 15px;
+  }
+
+  .imgRight {
+    float: right;
+    padding-left: 10px;
+    padding-bottom: 15px;
+  }
