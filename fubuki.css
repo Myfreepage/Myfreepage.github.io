@@ -8,7 +8,6 @@ html {
 scroll-behavior: smooth;
 }
 
-
 .title{
     font-size: 15px;
     color: rgb(38, 0, 0);
@@ -61,17 +60,17 @@ scroll-behavior: smooth;
     border: 1px solid rgba(160, 158, 158, 0.443);
 }
 
-
 .syoukai{
     border: 1px solid rgba(160, 158, 158, 0.443);
     margin-top: 0;
+    padding-bottom: 10px;
+    padding-left: 10px;
 }
 
 .profile-block {
     background: #fff;
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid #ddd;
 }
 
 .titl{
@@ -98,10 +97,22 @@ scroll-behavior: smooth;
 
 }
 
+.serifu-block {
+    border: 1px solid rgba(160, 158, 158, 0.443);
+    display: inline-block;   /* ← 必要なら中央寄せも簡単 */
+}
+
 .serifu {
+    font-size: 30px;
     padding: 10px 0;
     color: #b7c9d3;
     text-align: center;
+}
+
+.fubukikao {
+    display: block;
+    text-align: center;
+    width: 100%;             /* ← 必要なら調整 */
 }
 
 .footnote {
@@ -110,20 +121,119 @@ scroll-behavior: smooth;
   color: red;
 }
 
-.footnote:hover::after {
-  content: attr(data-note);
-  position: absolute;
-  left: 0;
-  top: 1.8em;
-  width: 260px;
-  font-size: 1px;
+.popup {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 1.5em;
+    width: 260px;
+    background: white;
+    border: 1px solid rgba(160, 158, 158, 0.443);
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    line-height: 1.5;
+    z-index: 20;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    color: rgb(38, 0, 0);
+}
+
+.footnote:hover .popup {
+    display: block;
+}
+
+.popup a {
+    color: rgb(38, 0, 0);
+    text-decoration: underline;
+}
+
+.popup-link {
+  text-align: right;
+  display: block;
+  margin-top: 6px;
+}
+
+.thumb {
+  width: 200px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.thumb:hover {
+  opacity: 0.8;
+}
+
+/* Lightbox の × ボタンを強制表示 */
+.lb-close {
+  display: block !important;
+  background-image: url("https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/images/close.png") !important;
+  width: 30px !important;
+  height: 30px !important;
+  top: 10px !important;
+  right: 10px !important;
+  position: absolute !important;
+  z-index: 9999 !important;
+}
+
+/* Lightbox 内の画像に fubukikao の width:100% が当たらないようにする */
+.lb-image {
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+details {
+  margin: 10px 0;
+  border: 1px solid rgba(160, 158, 158, 0.443);
+  border-radius: 5px;
+  padding: 5px;
+  background: #ffffff;
+}
+
+summary {
+  cursor: pointer;
+  padding: 5px;
+  list-style: none;
+}
+
+summary::marker {
+  list-style: none;
+}
+
+summary::before {
+  content: "＋ ";
+  font-weight: bold;
+}
+
+details[open] summary::before {
+  content: "－ ";
+}
+
+.compat-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+  text-align: center;
   background: white;
-  color: black;
-  padding: 10px 12px;
-  border-radius: 8px;
-  font-size: 0.9em;
-  line-height: 1.5;
-  z-index: 20;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  white-space: normal;
+}
+
+.compat-table th,
+.compat-table td {
+  border: 1px solid rgba(160, 158, 158, 0.443);
+  padding: 6px;
+}
+
+.compat-table thead th {
+  background: #b7c9d3;
+  color: rgb(38, 0, 0);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.compat-table tbody th {
+  background: #e8eef2;
+  color: rgb(38, 0, 0);
+  white-space: nowrap;
 }
