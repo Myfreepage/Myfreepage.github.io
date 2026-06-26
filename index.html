@@ -1735,4 +1735,22 @@
         <a href="#">トップ</a>
 
     </body>
+    <script>
+// 注釈をタップしたら開閉
+document.querySelectorAll('.footnote').forEach(function(el){
+  el.addEventListener('click', function(event){
+    event.stopPropagation(); // ← これが重要（外側のクリックと区別する）
+    const popup = this.querySelector('.popup');
+    popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+  });
+});
+
+// 画面のどこかをタップしたら全部閉じる
+document.addEventListener('click', function(){
+  document.querySelectorAll('.popup').forEach(function(p){
+    p.style.display = 'none';
+  });
+});
+</script>
+
 </html>
